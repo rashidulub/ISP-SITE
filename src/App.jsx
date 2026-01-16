@@ -186,93 +186,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* PACKAGES */}
-      <section id="packages" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-        <div className="text-center mb-12">
-          <h3 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-            Choose your broadband package
-          </h3>
-          <p className="text-gray-600 mt-2">Fast fiber internet with transparent pricing</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { tag: "Starter (P1)", mb: 16, price: 400 },
-            { tag: "Jubilee Special", mb: 25, price: 625 },
-            { tag: "Basic (P2)", mb: 30, price: 750 },
-            { tag: "Plus", mb: 40, price: 1000 },
-            { tag: "Family", mb: 50, price: 1250 },
-            { tag: "Pro", mb: 60, price: 1500 },
-          ].map((p, idx) => (
-            <div
-              key={p.mb}
-              className="relative overflow-hidden rounded-3xl border border-green-600 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <div className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-green-200/40 blur-3xl" />
-
-              <div className="absolute right-4 top-4 bg-green-700 text-white text-xs font-semibold px-4 py-1 rounded-full">
-                {p.tag}
-              </div>
-
-              <div className="p-7">
-                <p className="text-sm text-gray-600">Up to</p>
-                <h4 className="text-4xl font-extrabold text-gray-900">{p.mb} Mbps</h4>
-
-                <p className="mt-3 text-4xl font-extrabold text-green-700">
-                  ৳{p.price}
-                  <span className="text-sm text-gray-500 font-medium"> /month</span>
-                </p>
-
-                <div className="mt-8">
-                  <div className="relative mx-auto w-full max-w-[260px]">
-                    <div className="h-[140px] w-full rounded-t-[200px] bg-gray-100" />
-                    <div
-                      className={[
-                        "absolute inset-x-0 bottom-0 mx-auto h-[140px] w-full max-w-[260px] rounded-t-[200px]",
-                        "bg-[conic-gradient(from_180deg,rgba(22,163,74,1)_0deg,rgba(22,163,74,1)_120deg,rgba(229,231,235,1)_120deg,rgba(229,231,235,1)_180deg)]",
-                        "mask-[radial-gradient(circle_at_50%_100%,transparent_61%,black_62%)]",
-                        "-webkit-mask-[radial-gradient(circle_at_50%_100%,transparent_61%,black_62%)]",
-                      ].join(" ")}
-                      style={{
-                        transform: `scaleX(${0.55 + idx * 0.06})`,
-                        transformOrigin: "left",
-                      }}
-                    />
-
-                    <div className="absolute inset-0 grid place-items-center pt-10">
-                      <div className="text-center">
-                        <p className="text-3xl font-extrabold text-gray-900">{p.mb}</p>
-                        <p className="text-xs font-semibold text-gray-500 -mt-1">MBPS</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-                    <div className="rounded-2xl border border-black/10 bg-white p-3">
-                      <p className="text-xs text-gray-500">Download</p>
-                      <p className="text-sm font-bold text-gray-900">{p.mb} Mbps</p>
-                    </div>
-                    <div className="rounded-2xl border border-black/10 bg-white p-3">
-                      <p className="text-xs text-gray-500">Upload</p>
-                      <p className="text-sm font-bold text-gray-900">{p.mb} Mbps</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-7 space-y-3 text-sm text-gray-700">
-                  <p>✔ Connection Type: <b>Fiber</b></p>
-                  <p>✔ Setup charge: <b>1000 tk / Fiber</b></p>
-                  <p>✔ Free installation: <b>WiFi router, TV</b></p>
-                </div>
-
-                <button className="mt-8 w-full rounded-2xl bg-green-700 text-white py-3.5 text-sm font-semibold hover:bg-green-800 transition">
-                  Request now
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+     
+      
 
       {/* COVERAGE */}
       <section id="coverage" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 scroll-mt-24">
@@ -408,6 +323,240 @@ export default function App() {
           </div>
         </div>
       </section>
+
+{/* BROADBAND PACKAGES */}
+<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div className="text-center mb-12">
+    <h3 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+      Choose your broadband package
+    </h3>
+    <p className="text-gray-600 mt-2">Fast fiber internet with transparent pricing</p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[
+      { tag: "Starter (P1)", mb: 10, price: 500 },
+      { tag: "Jubilee Special", mb: 20, price: 650 },
+      { tag: "Basic (P2)", mb: 30, price: 750 },
+      { tag: "Plus", mb: 40, price: 1000 },
+      { tag: "Family", mb: 50, price: 1250 },
+      { tag: "Pro", mb: 60, price: 1500 },
+    ].map((p, idx) => (
+      <div
+        key={p.mb}
+        className="relative overflow-hidden rounded-3xl border border-green-600 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      >
+        {/* Soft glow */}
+        <div className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-green-200/40 blur-3xl" />
+
+        {/* Badge */}
+        <div className="absolute right-4 top-4 bg-green-700 text-white text-xs font-semibold px-4 py-1 rounded-full">
+          {p.tag}
+        </div>
+
+        <div className="p-7">
+          {/* Speed */}
+          <p className="text-sm text-gray-600">Up to</p>
+          <h4 className="text-4xl font-extrabold text-gray-900">{p.mb} Mbps</h4>
+
+          {/* Price */}
+          <p className="mt-3 text-4xl font-extrabold text-green-700">
+            ৳{p.price}
+            <span className="text-sm text-gray-500 font-medium"> /month</span>
+          </p>
+
+          {/* Smart Meter */}
+          <div className="mt-8">
+            <div className="relative mx-auto w-full max-w-[260px]">
+              <div className="h-[140px] w-full rounded-t-[200px] bg-gray-100" />
+
+              <div
+                className={[
+                  "absolute inset-x-0 bottom-0 mx-auto h-[140px] w-full max-w-[260px] rounded-t-[200px]",
+                  "bg-[conic-gradient(from_180deg,rgba(22,163,74,1)_0deg,rgba(22,163,74,1)_120deg,rgba(229,231,235,1)_120deg,rgba(229,231,235,1)_180deg)]",
+                  "mask-[radial-gradient(circle_at_50%_100%,transparent_61%,black_62%)]",
+                  "-webkit-mask-[radial-gradient(circle_at_50%_100%,transparent_61%,black_62%)]",
+                ].join(" ")}
+                style={{
+                  transform: `scaleX(${0.55 + idx * 0.06})`,
+                  transformOrigin: "left",
+                }}
+              />
+
+              <div className="absolute inset-0 grid place-items-center pt-10">
+                <div className="text-center">
+                  <p className="text-3xl font-extrabold text-gray-900">{p.mb}</p>
+                  <p className="text-xs font-semibold text-gray-500 -mt-1">MBPS</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+              <div className="rounded-2xl border border-black/10 bg-white p-3">
+                <p className="text-xs text-gray-500">Download</p>
+                <p className="text-sm font-bold text-gray-900">{p.mb} Mbps</p>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-white p-3">
+                <p className="text-xs text-gray-500">Upload</p>
+                <p className="text-sm font-bold text-gray-900">{p.mb} Mbps</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="mt-7 space-y-4 text-sm text-gray-700">
+            <div className="flex items-start gap-3">
+              <span className="h-9 w-9 rounded-2xl bg-green-50 text-green-700 grid place-items-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 7h16M7 7v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <p className="text-xs text-gray-500">Connection Type</p>
+                <p className="font-semibold text-gray-900">Fiber</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <span className="h-9 w-9 rounded-2xl bg-green-50 text-green-700 grid place-items-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M19.4 15a7.8 7.8 0 0 0 .1-6l-2.1.6a6 6 0 0 0-1.3-1.3l.6-2.1a7.8 7.8 0 0 0-6-.1l.6 2.1a6 6 0 0 0-1.3 1.3L6.5 9a7.8 7.8 0 0 0-.1 6l2.1-.6a6 6 0 0 0 1.3 1.3l-.6 2.1a7.8 7.8 0 0 0 6 .1l-.6-2.1a6 6 0 0 0 1.3-1.3l2.1.6Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <p className="text-xs text-gray-500">Setup charge</p>
+                <p className="font-semibold text-gray-900">1000 tk / Fiber</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <span className="h-9 w-9 rounded-2xl bg-green-50 text-green-700 grid place-items-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 10a11 11 0 0 1 14 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M8.5 13.5a6 6 0 0 1 7 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M12 17h.01" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-xs text-gray-500">Free installation</p>
+                <p className="font-semibold text-gray-900">WiFi router, TV</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <button className="mt-8 w-full rounded-2xl bg-green-700 text-white py-3.5 text-sm font-semibold hover:bg-green-800 transition">
+            Request now
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+{/* MAX / CORPORATE PACKAGES SECTION */}
+<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div className="text-center mb-12">
+    <h3 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+      Choose your corporate package
+    </h3>
+    <p className="text-gray-600 mt-2">
+      For families, heavy users and professionals
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {[
+      { tag: "Pro", mb: 80, price: 800 },
+      { tag: "Pro", mb: 90, price: 950 },
+      { tag: "Pro", mb: 100, price: 1100 },
+    ].map((p, idx) => (
+      <div
+        key={p.mb}
+        className="relative overflow-hidden rounded-3xl border border-green-600 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      >
+        <div className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-green-200/40 blur-3xl" />
+
+        <div className="absolute right-4 top-4 bg-green-700 text-white text-xs font-semibold px-4 py-1 rounded-full">
+          {p.tag}
+        </div>
+
+        <div className="p-7">
+          <p className="text-sm text-gray-600">Up to</p>
+          <h4 className="text-4xl font-extrabold text-gray-900">{p.mb} Mbps</h4>
+
+          <p className="mt-3 text-4xl font-extrabold text-green-700">
+            ৳{p.price}
+            <span className="text-sm text-gray-500 font-medium"> /month</span>
+          </p>
+
+          <div className="mt-8">
+            <div className="relative mx-auto w-full max-w-[260px]">
+              <div className="h-[140px] w-full rounded-t-[200px] bg-gray-100" />
+              <div
+                className={[
+                  "absolute inset-x-0 bottom-0 mx-auto h-[140px] w-full max-w-[260px] rounded-t-[200px]",
+                  "bg-[conic-gradient(from_180deg,rgba(22,163,74,1)_0deg,rgba(22,163,74,1)_125deg,rgba(229,231,235,1)_125deg,rgba(229,231,235,1)_180deg)]",
+                  "mask-[radial-gradient(circle_at_50%_100%,transparent_61%,black_62%)]",
+                  "-webkit-mask-[radial-gradient(circle_at_50%_100%,transparent_61%,black_62%)]",
+                ].join(" ")}
+                style={{
+                  transform: `scaleX(${0.65 + idx * 0.08})`,
+                  transformOrigin: "left",
+                }}
+              />
+              <div className="absolute inset-0 grid place-items-center pt-10">
+                <div className="text-center">
+                  <p className="text-3xl font-extrabold text-gray-900">{p.mb}</p>
+                  <p className="text-xs font-semibold text-gray-500 -mt-1">MBPS</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+              <div className="rounded-2xl border border-black/10 bg-white p-3">
+                <p className="text-xs text-gray-500">Download</p>
+                <p className="text-sm font-bold text-gray-900">{p.mb} Mbps</p>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-white p-3">
+                <p className="text-xs text-gray-500">Upload</p>
+                <p className="text-sm font-bold text-gray-900">{p.mb} Mbps</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-7 space-y-4 text-sm text-gray-700">
+            <p>✔ Connection Type: <b>Fiber</b></p>
+            <p>✔ Setup charge: <b>1000 tk / Fiber</b></p>
+            <p>✔ Free installation: <b>WiFi router, TV</b></p>
+          </div>
+
+          <button className="mt-8 w-full rounded-2xl bg-green-700 text-white py-3.5 text-sm font-semibold hover:bg-green-800 transition">
+            Request now
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+      
+
 
       {/* SUPPORT */}
       <section id="support" className="bg-gradient-to-b from-gray-50 to-white py-20 scroll-mt-24">
